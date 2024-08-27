@@ -29,13 +29,3 @@ in the event of failure. This aligns well with the fault-tolerant requirement of
 The CLI Client, built in Go, is designed to pool Kafka events and print them. It has a functionality 
 which enables you to filter and print events propagated by a specific account, which can be 
 changed at runtime
-
-# PROJECT SETUP
-
-```sh
-docker-compose up
-```
-
-```sh
-make client
-```
