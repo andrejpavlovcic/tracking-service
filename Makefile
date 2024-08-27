@@ -22,6 +22,6 @@ client:
 	docker attach client
 
 load_test:
-	go run tests/main.go
+	go run scripts/main.go
 
 .PHONY: createdb dropdb migrateup migratedown
