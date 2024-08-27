@@ -9,7 +9,8 @@ language I have worked with the most and I am most confident in.
 I chose PostgreSQL for storing accounts and events data because it can efficiently handle large 
 volumes of data and is easily scalable. Additionally, PostgreSQL is the database I am most 
 familiar with.
-REDIS
+
+## REDIS
 To reduce server-to-database calls, I chose to use Redis. When checking an account's status 
 (active, not active) on every request, the account data is cached in Redis, reducing database 
 load and saving time.
