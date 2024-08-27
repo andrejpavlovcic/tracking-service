@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS "account" (
+    "id" BIGSERIAL PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "is_active" BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+INSERT INTO account VALUES (1, 'Acc1', TRUE);
+INSERT INTO account VALUES (2, 'Acc2', TRUE);
+INSERT INTO account VALUES (3, 'Acc3', TRUE);
