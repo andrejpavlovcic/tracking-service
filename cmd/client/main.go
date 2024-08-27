@@ -65,7 +65,11 @@ func main() {
 		case newAccountID := <-accountIDChan:
 			mu.Lock()
 			currentAccountID = newAccountID
-			log.Infof("Account ID updated to: %d", *currentAccountID)
+			if currentAccountID != nil {
+				log.Infof("Account ID updated to: %d", *currentAccountID)
+			} else {
+				log.Info("Account ID filter removed")
+			}
 			mu.Unlock()
 
 		default:
@@ -80,7 +84,7 @@ func main() {
 
 				// Display only events if there is no accountID filter set or event's accountID matched accountID filter
 				if currentAccountID == nil || event.AccountID == *currentAccountID {
-					log.Infof("AccountID: %d, Message: %s", event.AccountID, event.Data)
+					log.Infof("AccountID: %d | Message: %s | Timestamp: %v", event.AccountID, event.Data, event.Timestamp)
 				}
 
 			case kafka.Error:

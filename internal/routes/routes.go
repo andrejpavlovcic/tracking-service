@@ -20,7 +20,7 @@ func NewRouter() http.Handler {
 
 	rtr.HandleFunc("/post/event/{accountID}", postEvent).Methods(http.MethodPost)
 
-	rtr.HandleFunc("/count/unique-account/", getUniqueAccountCount).Methods(http.MethodGet)
+	rtr.HandleFunc("/count/unique-account", getUniqueAccountCount).Methods(http.MethodGet)
 
 	return rtr
 }
